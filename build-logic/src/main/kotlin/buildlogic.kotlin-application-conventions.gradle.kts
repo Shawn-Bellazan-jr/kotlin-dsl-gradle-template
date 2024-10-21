@@ -1,4 +1,3 @@
-// build-logic/src/main/kotlin/buildlogic.kotlin-application-conventions.gradle.kts
 
 plugins {
     id("buildlogic.kotlin-common-conventions")
@@ -10,13 +9,7 @@ application {
     mainClass.set("com.example.MainKt")
 }
 
-sourceSets {
-    main {
-        kotlin {
-            srcDir("src/main/kotlin")
-        }
-    }
-}
+
 
 dependencies {
     // Add standard Kotlin dependencies
