@@ -3,10 +3,10 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -14,14 +14,19 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Only one checkout is needed
+        uses: actions/checkout@v2
 
-      # Set up the Java environment (JDK 21 with Temurin)
-      - uses: actions/setup-java@v4
+      # Set up the Java environment (JDK 11 or any required version)
+      - name: Set up JDK
+        uses: actions/setup-java@v2
         with:
-          distribution: 'temurin' # Supported distributions: 'zulu', 'temurin', etc.
-          java-version: '21'
+          distribution: 'temurin'
+          java-version: '11'
 
-      # Build the project using Gradle wrapper
+      # Make the gradlew file executable
+      - name: Make Gradle Wrapper executable
+        run: chmod +x ./gradlew
+
+      # Build the project using Gradle Wrapper
       - name: Build with Gradle
-        run: ./gradlew build  # Use ./gradlew, not ./grad
+        run: ./gradlew build
