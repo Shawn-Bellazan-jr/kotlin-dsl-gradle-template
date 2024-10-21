@@ -14,14 +14,14 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2  # Only one checkout is needed
 
-#      https://github.com/marketplace/actions/setup-java-jdk
-      - uses: actions/checkout@v4
+      # Set up the Java environment (JDK 21 with Temurin)
       - uses: actions/setup-java@v4
         with:
-          distribution: 'temurin' # See 'Supported distributions' for available options
+          distribution: 'temurin' # Supported distributions: 'zulu', 'temurin', etc.
           java-version: '21'
 
+      # Build the project using Gradle wrapper
       - name: Build with Gradle
-        run: ./gradle build
+        run: ./gradlew build  # Use ./gradlew, not ./grad
