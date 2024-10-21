@@ -16,8 +16,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup Java JDK
-        uses: actions/setup-java@v4.4.0
+#      https://github.com/marketplace/actions/setup-java-jdk
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '21'
 
       - name: Build with Gradle
         run: ./gradlew build
