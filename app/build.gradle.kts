@@ -11,3 +11,15 @@ appSettings {
     environment = "production"
     apiUrl = "https://api.myapp.com"
 }
+
+application {
+    mainClass.set("com.example.MainKt")
+}
+
+tasks.register("runApp") {
+    dependsOn("run") // Ensure the default 'run' task is executed
+
+    doLast {
+        println("Running Kotlin application...")
+    }
+}

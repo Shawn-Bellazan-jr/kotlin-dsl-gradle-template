@@ -1,7 +1,6 @@
 plugins {
     `kotlin-dsl`
     `java-gradle-plugin`
-
     `maven-publish`
 }
 
@@ -15,7 +14,7 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            from(components["java"])
+            from(components["kotlin"])
 
         }
 

@@ -13,12 +13,20 @@ repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
+gradle.startParameter.isBuildCacheEnabled = true
+gradle.startParameter.isBuildScan = true
+
+tasks.register("cleanBuildCache", Delete::class) {
+    doLast {
+        layout.buildDirectory.get().asFile.deleteRecursively()
+        println("Build cache cleaned!")
+    }
+}
+
 
 dependencies {
-    constraints {
-        // Define dependency versions as constraints
-        implementation("org.apache.commons:commons-text:1.12.0")
-    }
+    implementation("org.apache.commons:commons-text:1.12.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.20")
 }
 
 testing {

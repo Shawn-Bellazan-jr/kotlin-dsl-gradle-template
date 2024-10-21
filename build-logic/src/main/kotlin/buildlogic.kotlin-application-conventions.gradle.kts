@@ -11,6 +11,7 @@ application {
 
 
 
+
 dependencies {
     // Add standard Kotlin dependencies
     implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.21")
