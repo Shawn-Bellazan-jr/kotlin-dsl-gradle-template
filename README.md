@@ -1,4 +1,5 @@
 # Kotlin DSL Gradle Project Template
+![Build Status](https://github.com/Shawn-Bellazan-jr/kotlin-dsl-gradle-template/actions/workflows/ci.yml/badge.svg)
 
 This template project uses **Kotlin DSL** for Gradle. It demonstrates how to structure a multi-module project, write build logic, and manage dependencies using Gradle's **Version Catalog**.
 
