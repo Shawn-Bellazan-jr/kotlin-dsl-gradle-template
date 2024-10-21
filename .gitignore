@@ -1,0 +1,63 @@
+# Kotlin/Java related files
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.hprof
+
+# Directories created by Kotlin/Java compilers
+out/
+build/
+
+# Gradle specific
+.gradle/
+build/
+gradle-app.setting
+gradle.properties
+gradlew
+gradlew.bat
+gradle-wrapper.jar
+gradle-wrapper.properties
+gradle/wrapper/
+
+# IDEs (JetBrains IntelliJ IDEA / Android Studio)
+.idea/
+*.iws
+*.ipr
+*.iml
+.idea_modules/
+
+# VS Code settings
+.vscode/
+
+# Logs and reports
+*.log
+*.log.*
+*.pid
+hs_err_pid*
+.reports/
+test-results/
+test-output/
+logs/
+lint-results.xml
+lint-results.html
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Kotlin DSL Gradle configuration caches
+.kts/.gradle/
+.kts/.idea/
+
+# Dependency directories
+node_modules/
+.yarn/
+.yarnrc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional custom ignore patterns
+local.properties
