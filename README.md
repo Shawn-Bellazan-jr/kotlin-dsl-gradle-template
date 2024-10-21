@@ -20,27 +20,36 @@ This template is organized as follows:
 
 ```
 template-project/
-├── app/                # Main application module
+├── app/                                # Main application module
 │   ├── build.gradle.kts
 │   └── src/
-├── ui/                 # UI module (subproject)
+├── ui/                                 # UI module (subproject)
 │   ├── build.gradle.kts
 │   └── src/
-├── utilities/          # Utility services module (subproject)
+├── utilities/                          # Utility services module (subproject)
 │   ├── build.gradle.kts
 │   └── src/
-├── build-logic/        # Custom build logic (shared configuration)
+├── build-logic/                        # Custom build logic module
 │   ├── build.gradle.kts
 │   └── src/
-├── config/             # Gradle configuration files
+│       └── main/
+│           └── kotlin/
+│               └── CustomPlugin.kt     # Your custom plugin
+├── samples/                            # Directory for sample projects
+│   └── kotlin-dsl-gradle-template/     # Example sample project
+│       ├── build.gradle.kts            # Sample project build script
+│       ├── settings.gradle.kts         # Sample project settings file
+│       └── src/
+│           └── main/
+│               └── kotlin/
+│                   └── Main.kt         # Example Kotlin file in the sample project
+├── config/                             # Gradle configuration files
 │   └── gradle-wrapper.properties
-├── tests/              # Centralized tests
+├── docs/                               # Project documentation
 │   └── README.md
-├── docs/               # Project documentation
-│   └── README.md
-├── settings.gradle.kts # Root Gradle settings using Kotlin DSL
-├── build.gradle.kts    # Root build script using Kotlin DSL
-└── README.md           # Main project README
+├── settings.gradle.kts                 # Root settings file for the entire project
+├── build.gradle.kts                    # Root build file for the project
+└── README.md                           # Main project README
 ```
 
 ### Key Directories:

@@ -1,29 +1,21 @@
+// Root settings.gradle.kts
 pluginManagement {
-    repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
-        mavenCentral()
-        gradlePluginPortal()
-    }
+    // Include 'plugins build' to define convention plugins.
     includeBuild("build-logic")
 
 }
+
+plugins {
+    // Apply the foojay-resolver plugin to allow automatic download of JDKs
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
+}
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
+//    includeBuild("samples/composite-build")
+
 }
 
 rootProject.name = "kotlin-dsl-gradle-template"
-include("app")
-include("ui")
-include("utilities")
-include("docs")
-include("config")
+
+// Include the core subprojects
+include("app", "ui", "utilities", "config")
+
